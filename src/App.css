@@ -1,0 +1,141 @@
+:root{
+  --colorX:rgb(187, 19, 128);
+  --colorO:rgb(70, 211, 18);
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 99vh;
+  font-size: 10px;
+  background-color: #efefef;
+}
+
+.app{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  user-select: none;
+}
+
+.titlu{
+  font-size: 30px;
+  font-weight: bold;
+  font-family: cursive;
+  letter-spacing: 5px;
+}
+
+.square{
+  width: 4rem;
+  height: 4rem;
+  background-color: white;
+  border-radius: 10%;
+  border: none;
+  box-shadow: 0px 0px 8px gray;
+  font-size: 5em;
+  font-family:cursive;
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem;
+  border:2px dashed rgba(0, 0, 0, 0.632);
+  cursor: pointer;
+}
+
+.x{
+  color: var(--colorX);
+}
+.o{
+  color: var(--colorO);
+}
+.square:hover{
+  box-shadow: 0px 0px 15px gray;
+}
+
+.board{
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.reset{
+  background-color: rgb(13, 109, 165);
+  font-size: 2em;
+  font-weight: bold;
+  font-family:cursive;
+  padding: 0.2rem;
+  width: 8rem;
+  border-radius: 5%;
+  border:2px dashed rgba(0, 0, 0, 0.632)  ;
+  box-shadow: 2px 2px 5px black;
+  cursor: pointer;
+   letter-spacing: 3px;
+}
+
+.reset:hover{
+  background-color: rgb(41, 93, 190) ;
+  box-shadow: 0px 0px 10px rgb(0, 0, 0);
+}
+.scoreBar{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width:100%;
+  height: 3rem;
+  background-color: white;
+  box-shadow: 0px 0px 8px gray;
+  font-family:cursive;
+  font-weight: bolder;
+  font-size: 2em;
+  border-radius: 0.3rem;
+  position: relative;
+}
+
+.scoreBar::after{
+  content: " ";
+  position:absolute;
+  width: 50%;
+  height: 0.4rem;
+  bottom:0;
+  transition: background-color 0.2s,
+              translate 0.5s;
+  left: 0;
+}
+#x::after{
+  background-color:var(--colorX);
+  border-radius: 0 0 0 0.3rem;
+}
+
+#o::after{
+  translate: 100%;
+  background-color: var(--colorO);
+  border-radius: 0 0 0.3rem 0;
+}
+
+.linieSVG{
+    position: absolute;
+    height: 240px;
+    stroke-width: 8px;
+    stroke-linecap:round;
+    display: none;
+}
+.mazgalitSVG{
+  display: none;
+  position: absolute;
+  height: 240px;
+  stroke-width: 8px;
+  stroke-linecap:round;
+ transform: translateY(5px);
+ stroke-width: 6px;
+ stroke-linecap:round;
+ stroke:black;
+}
